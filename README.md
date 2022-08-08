@@ -1,1 +1,1 @@
-Blank HTML/CSS template
+<h1>The BBQ Grill Club</h1>
