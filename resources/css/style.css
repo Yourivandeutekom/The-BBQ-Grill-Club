@@ -199,6 +199,30 @@ nav ul li {
 nav ul li a {
     color: hsl(0, 0%, 100%);
     text-decoration: none;
+    position: relative;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    inline-size: 0;
+    block-size: 2px;
+    background-color: hsl(0, 0%, 100%);
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll nav a::before {
+    background-color: hsl(0, 0%, 0%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    nav a:hover::before{
+      left: 0;
+      right: auto;
+      inline-size: 100%;
+    }
 }
 
 #navigation.scroll nav ul li a {
@@ -272,6 +296,28 @@ nav ul li a {
 #banner li a {
     color:hsl(0, 0%, 100%);
     text-decoration: none;
+    position: relative;
+}
+
+#banner li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    inline-size: 0;
+    block-size: 2px;
+    background-color: hsl(0, 0%, 100%);
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+
+@media (hover: hover) and (pointer: fine) {
+    #banner li a:hover::before{
+      left: 0;
+      right: auto;
+      inline-size: 100%;
+    }
 }
 
 /* 03 Recipes */
@@ -436,7 +482,45 @@ button:hover {
 /* 06 Footer */
 
 footer {
-    background-color: white;
-    height: 200px;
     margin-block-start: 100px;
+    padding-block: 6.25rem 4.375rem;
+    text-align: center;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 25%);
+}
+
+footer a {
+    border: 1px solid hsl(0, 0%, 25%);
+    padding: 0.390625rem 0.475rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    background-color: hsl(0, 0%, 100%);
+    transition: background 0.5s ease-in-out;
+}
+
+footer a:hover {
+    background-color: hsl(0, 0%, 15%)
+
+}
+
+footer a i {
+    color: hsl(0, 0%, 25%);
+    font-size: 1.2rem;
+    transition: color 0.5s ease-in-out;
+}
+
+footer a:hover i {
+    color: hsl(0, 0%, 100%);
+}
+
+
+footer .container { 
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-block-end: 30px;
+}
+
+footer p {
+    margin-block: 30px;
 }
